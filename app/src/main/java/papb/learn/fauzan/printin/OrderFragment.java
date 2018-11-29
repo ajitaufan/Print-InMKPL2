@@ -63,9 +63,8 @@ public class OrderFragment extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.floatingActionButton:
-                // TODO: 29/11/18 uncomment this for next version
-//                Intent toUploadFile = new Intent(this.getContext(),UploadFileActivity.class);
-//                startActivity(toUploadFile);
+                Intent toUploadFile = new Intent(this.getContext(),UploadFileActivity.class);
+                startActivity(toUploadFile);
         }
     }
 

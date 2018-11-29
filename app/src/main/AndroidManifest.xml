@@ -29,6 +29,7 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".OrderListActivity">
         </activity>
+        <activity android:name=".UploadFileActivity"/>
         <activity
             android:name=".RegisterActivity"
             android:parentActivityName=".LoginActivity">
