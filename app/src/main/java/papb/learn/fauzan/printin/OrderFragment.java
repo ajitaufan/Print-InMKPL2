@@ -7,17 +7,43 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+
+import papb.learn.fauzan.printin.adapter.OrderViewAdapter;
+import papb.learn.fauzan.printin.model.OrderModel;
+
 public class OrderFragment extends Fragment implements View.OnClickListener {
 
     private FloatingActionButton myFab;
+    ArrayList<OrderModel> orderList;
+    private DatabaseReference mDatabase;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_order, container, false);
+        View v = inflater.inflate(R.layout.fragment_order, container, false);
+
+        orderList = new ArrayList<>();
+
+//        RecyclerView recyclerView = v.findViewById(R.id.rv_orderlist);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+//        OrderViewAdapter adapter = new OrderViewAdapter(getContext(), orderList);
+//        recyclerView.setAdapter(adapter);
+
+        return v;
     }
 
     @Override
@@ -42,4 +68,39 @@ public class OrderFragment extends Fragment implements View.OnClickListener {
 //                startActivity(toUploadFile);
         }
     }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        initListOrder();
+    }
+
+    private void initListOrder() {
+        mDatabase = FirebaseDatabase.getInstance().getReference("Order");
+        FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
+        mDatabase.child(currentFirebaseUser.getUid())
+                .addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                orderList.clear();
+                for (DataSnapshot pasienSnapshot : dataSnapshot.getChildren()){
+                    OrderModel orderModel = pasienSnapshot.getValue(OrderModel.class);
+                    orderList.add(orderModel);
+                }
+
+                RecyclerView recyclerView = getView().findViewById(R.id.rv_orderlist);
+                recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+                OrderViewAdapter adapter = new OrderViewAdapter(getContext(), orderList);
+                recyclerView.setAdapter(adapter);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
 }
