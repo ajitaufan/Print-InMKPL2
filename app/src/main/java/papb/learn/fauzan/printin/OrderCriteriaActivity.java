@@ -64,10 +64,9 @@ public class OrderCriteriaActivity extends AppCompatActivity implements View.OnC
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.btn_simpan_kriteria :
-                // TODO: 29/11/18 uncomment this for next version
-//                Intent toMapDelivery = new Intent(this,OrderMapsActivity.class);
-//              //  toMapDelivery.putExtra("listOrder",orderCriteriaModels);
-//                startActivity(toMapDelivery);
+                Intent toMapDelivery = new Intent(this,OrderMapsActivity.class);
+              //  toMapDelivery.putExtra("listOrder",orderCriteriaModels);
+                startActivity(toMapDelivery);
                 break;
         }
     }
