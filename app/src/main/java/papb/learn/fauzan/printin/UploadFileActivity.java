@@ -110,16 +110,15 @@ public class UploadFileActivity extends AppCompatActivity implements View.OnClic
                 break;
             case R.id.btn_upload_file:
                 if (pdfUri != null){
-                    uploadFile(pdfUri);
+//                    uploadFile(pdfUri);
                 } else {
                     Toast.makeText(UploadFileActivity.this,"please select a file...",Toast.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.btn_simpan_file:
-                // TODO: 11/29/2018 untuk versi 2 
-//                Intent toCriteriaActivity = new Intent(this,OrderCriteriaActivity.class);
-//                toCriteriaActivity.putExtra("listFile",uploadFileModels);
-//                startActivity(toCriteriaActivity);
+                Intent toCriteriaActivity = new Intent(this,OrderCriteriaActivity.class);
+                toCriteriaActivity.putExtra("listFile",uploadFileModels);
+                startActivity(toCriteriaActivity);
                 break;
         }
     }
