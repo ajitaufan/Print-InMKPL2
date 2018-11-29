@@ -124,12 +124,11 @@ public class OrderMapsActivity extends AppCompatActivity implements OnMapReadyCa
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.btn_simpan_lokasi_kirim:
-                // TODO: 29/11/18 uncomment this after commit
-//                Intent toOrderSummary = new Intent(this,OrderSummaryActivity.class);
-//                toOrderSummary.putExtra("deliveryFee",deliveryFee);
-//                toOrderSummary.putExtra("deliveryDistance",deliveryDistance);
-//                toOrderSummary.putExtra("deliveryAdress",deliveryAdress);
-//                startActivity(toOrderSummary);
+                Intent toOrderSummary = new Intent(this,OrderSummaryActivity.class);
+                toOrderSummary.putExtra("deliveryFee",deliveryFee);
+                toOrderSummary.putExtra("deliveryDistance",deliveryDistance);
+                toOrderSummary.putExtra("deliveryAdress",deliveryAdress);
+                startActivity(toOrderSummary);
                 break;
         }
     }
