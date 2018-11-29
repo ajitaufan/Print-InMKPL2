@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">PrintIn</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+
+    <string name="username">Username</string>
+    <string name="buat_order">Buat Order</string>
+    <string name="order_kosong">Order Kosong!</string>
+    <string name="segera_buat_order_dan_kirim_ketempat_anda">Segera buat order dan kirim ketempat Anda</string>
+    <string name="tambah_file">Tambah File</string>
+    <string name="file_name">File Name</string>
+    <string name="color_monochrome">Hitam-Putih</string>
+    <string name="color_colored">Warna</string>
+    <string name="binded">Jilid</string>
+    <string name="next">Lanjut</string>
+    <string name="title_activity_order_maps">Lokasi Antar</string>
+    <string name="distance">Distance</string>
+    <string name="delivery_fee">Delivery Fee</string>
+    <string name="distance_value">3 km</string>
+    <string name="delivery_fee_value">Rp. 3000</string>
+    <string name="default_adress">Jalan Veteran No.12,Ketawanggede,Lowokwaru,Malang</string>
+    <string name="default_distance">3 km</string>
+    <string name="default_shipping_fee">Rp. 2000</string>
+    <string name="label_shipping_to">Shipping To</string>
+    <string name="default_customer_name">Channarong Kiet</string>
+    <string name="label_order_summary">Order Summary</string>
+    <string name="paper_type_default">A4-70gram</string>
+    <string name="front_bind_default">Transparan</string>
+    <string name="back_bind_default">Biru</string>
+    <string name="default_type_bind">Lakban Hitam</string>
+    <string name="total_cost">Total Biaya : 12.000</string>
+    <string name="default_total_page">12 Halaman</string>
+    <string name="just_login">Already have an account? <font color='#01C6DB'>Login</font></string>
+    <string name="just_register">Don\'t have an account ? <font color='#01C6DB'>Register</font></string>
+    <string name="upload_file">Upload File</string>
+    <string name="channel_name">printin_channel</string>
+    <string name="channel_description">PrintIn Notification Channel</string>
+    <string name="order_diproses">Your order has been processed</string>
+    <string name="tekan_lihat_order">Click to see your order</string>
+    <string name="all_page">Semua halman</string>
+    <string name="num_page">Halaman</string>
+    <string name="dist_measure_unit">km</string>
+</resources>

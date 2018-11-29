@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF0048</color>
+    <color name="colorPrimaryDark">#c40021</color>
+    <color name="colorAccent">#00001b</color>
+
+    <color name="blackColor">#000</color>
+    <color name="whiteColor">#fff</color>
+    <color name="bg_tv_link">#000000</color>
+    <color name="btn_login">#252C41</color>
+    <color name="btn_register">#FF0048</color>
+    <color name="background_all">#DBDBDB</color>
+    <color name="custom_et">#EBEBEB</color>
+    <color name="hint_color">#7D7D7D</color>
+    <color name="bg_color">#DBDBDB</color>
+    <color name="item_file_criteria">#E8E8E8</color>
+    <color name="btn_next">#d1023c</color>
+    <color name="bg_label_summary">#00CDCD</color>
+    <color name="btn_upload">#cc0039</color>
+</resources>
